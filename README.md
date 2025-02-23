@@ -11,7 +11,7 @@ The application includes six main tools:
 2. **Fix-it** - Identify and fix issues in the provided code.
 3. **Code Whisperer** - Provide detailed text & voice-based explanations of code functionality.
 4. **Code Optimizer** - Improve code structure and efficiency.
-5. **DocuBot** - Generate structured documentation in TXT and DOCX formats.
+5. **DocuBot** - Generate structured documentation in TXT, PDF and DOCX formats.
 6. **AI Pair Coder** - Assist developers in real-time coding collaborations.
 
 ## Technology Used
@@ -91,17 +91,11 @@ CodeNova leverages IBM Granite AI models for core functionalities, ensuring high
 - Enterprise Adoption
 - Global Developer Reach
 
-## Contributing
-1. Fork the repository.
-2. Create a new branch (`feature-xyz`).
-3. Commit changes and push to GitHub.
-4. Open a Pull Request.
-
 ## License
 This project is licensed under the MIT License.
 
 ## Contact
-- Nidhish Balasubramanya - [nidhishbalasubramaya@gmail.com](nidhishbalasubramanya@gmail.com)
+- Nidhish Balasubramanya - [nidhishbalasubramanya@gmail.com](nidhishbalasubramanya@gmail.com)
 - Nathania Rachael - [nathaniarachael@gmail.com](nathaniarachael@gmail.com)
 - Allen Reji - [allenreji@gmail.com](allenreji@gmail.com)
 ---
