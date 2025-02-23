@@ -1,13 +1,11 @@
 import os
 import requests
-from dotenv import load_dotenv
-
-load_dotenv()
+import streamlit as st
 
 #Gemini key
-Gemini_API_key=os.getenv("GEMINI_API_KEY")
+Gemini_API_key=st.secrets["GEMINI_API_KEY"]
 # IBM Cloud API Key
-API_KEY = os.getenv("IBM_CLOUD_API_KEY")
+API_KEY = st.secrets["IBM_CLOUD_API_KEY"]
 
 # IAM token endpoint
 IAM_URL = "https://iam.cloud.ibm.com/identity/token"
