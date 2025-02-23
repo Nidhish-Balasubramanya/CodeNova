@@ -35,7 +35,7 @@ st.markdown(
             transform: scale(1.02);
         }
         h4 {
-            color: #FFD700;
+            color: white;
         }
         p, small {
             color: white;
@@ -49,7 +49,7 @@ st.markdown(
 st.sidebar.markdown(
     """
     <div style="text-align: center; margin-bottom: 20px;">
-        <img src="https://i.imgur.com/Pd6FnIc.jpeg" width="150">
+        <img src="https://i.imgur.com/GyI62fx.jpeg" width="150">
         
     </div>
     """,
@@ -79,7 +79,7 @@ if st.session_state.option == "Home":
     st.markdown(
     """
     <div style="display: flex; align-items: center; justify-content: center; gap: 1px;">
-        <img src="https://i.imgur.com/vVhu8No.jpeg" alt="CodeNova Logo" style="height: 40px;display: inline-block;">
+        <img src="https://i.imgur.com/BOFI56f.jpeg" alt="CodeNova Logo" style="height: 40px;display: inline-block;">
         <br><br><br>
     </div>
     """,
@@ -124,7 +124,7 @@ elif st.session_state.option == "Code Wizard":
     st.markdown(
     """
     <div style="position: absolute; top: 10px; right: 20px;">
-        <img src="https://i.imgur.com/vVhu8No.jpeg" width="100">
+        <img src="https://i.imgur.com/BOFI56f.jpeg" width="100">
     </div>
     """,
     unsafe_allow_html=True
@@ -193,7 +193,7 @@ elif st.session_state.option == "Fix-It":
     st.markdown(
     """
     <div style="position: absolute; top: 10px; right: 20px;">
-        <img src="https://i.imgur.com/vVhu8No.jpeg" width="100">
+        <img src="https://i.imgur.com/BOFI56f.jpeg" width="100">
     </div>
     """,
     unsafe_allow_html=True
@@ -248,7 +248,7 @@ elif st.session_state.option == "Code Whisperer":
     st.markdown(
     """
     <div style="position: absolute; top: 10px; right: 20px;">
-        <img src="https://i.imgur.com/vVhu8No.jpeg" width="100">
+        <img src="https://i.imgur.com/BOFI56f.jpeg" width="100">
     </div>
     """,
     unsafe_allow_html=True
@@ -325,7 +325,7 @@ elif st.session_state.option == "Code Optimizer":
     st.markdown(
     """
     <div style="position: absolute; top: 10px; right: 20px;">
-        <img src="https://i.imgur.com/vVhu8No.jpeg" width="100">
+        <img src="https://i.imgur.com/BOFI56f.jpeg" width="100">
     </div>
     """,
     unsafe_allow_html=True
@@ -377,7 +377,7 @@ elif st.session_state.option == "DocuBot":
     st.markdown(
     """
     <div style="position: absolute; top: 10px; right: 20px;">
-        <img src="https://i.imgur.com/vVhu8No.jpeg" width="100">
+        <img src="https://i.imgur.com/BOFI56f.jpeg" width="100">
     </div>
     """,
     unsafe_allow_html=True
@@ -486,7 +486,7 @@ elif st.session_state.option == "AI Pair Coder":
     st.markdown(
     """
     <div style="position: absolute; top: 10px; right: 20px;">
-        <img src="https://i.imgur.com/vVhu8No.jpeg" width="100">
+        <img src="https://i.imgur.com/BOFI56f.jpeg" width="100">
     </div>
     """,
     unsafe_allow_html=True
