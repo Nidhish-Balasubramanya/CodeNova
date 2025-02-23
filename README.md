@@ -4,6 +4,7 @@
 ## Overview
 **CodeNova** is an AI-powered code assistant designed to streamline software development by automating code generation, debugging, documentation, and code explanations. It integrates multiple AI models to provide a seamless and intelligent coding experience.integrating IBM's Granite LLMs to enhance software development workflows. This project was built for the **Generative AI Hackathon with IBM GRANITE** and provides business-valued solutions by automating various software engineering tasks.
 
+To access CodeNova through streamlit click [CodeNova](https://codenova.streamlit.app/)
 ## Features
 The application includes six main tools:
 1. **Code Wizard** - Automatically generate code based on user input prompt.
@@ -23,11 +24,11 @@ CodeNova leverages IBM Granite AI models for core functionalities, ensuring high
 - **Google Gemini Pro** – Enables comprehensive document generation to streamline documentation tasks.
 - **Google Text-to-Speech** – Provides text and voice-based code explanations, enhancing developer understanding.
 
-## Installation and Setup
+## Installation and Setup (For running it locally)
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/AI-Powered-Software-Engineer.git
-   cd AI-Powered-Software-Engineer
+   git clone https://github.com/Nidhish-Balasubramanya/CodeNova.git
+   cd CodeNova
    ```
 2. Create a virtual environment and activate it:
    ```sh
@@ -38,36 +39,44 @@ CodeNova leverages IBM Granite AI models for core functionalities, ensuring high
    ```sh
    pip install -r requirements.txt
    ```
-4. Run the application:
+4. Set Up API Keys:
+   CodeNova uses IBM Granite, Google Gemini Pro, and Google Text-to-Speech. Ensure you have the necessary API keys configured in a `.env` file.
+
+   - Create a `.env` file in the project root directory:
    ```sh
-   python app.py
+   touch .env
    ```
-   The app will be available at `http://localhost:5000`
+   - Add your API keys:
+   ```sh
+   IBM_API_KEY="your-ibm-api-key"
+   GOOGLE_API_KEY="your-google-api-key"
+   ```
+5. In `config.py`, replace `Gemini_API_key=st.secrets["GEMINI_API_KEY"]` and `API_KEY = os.getenv("IBM_CLOUD_API_KEY")` with direct retrieval from `.env` file by doing the below.
+   ```sh
+   from dotenv import load_dotenv
+   
+   # Load environment variables from .env file
+   load_dotenv()
+
+   #Retrieve API Keys from .env file
+   Gemini_API_key = os.getenv("GEMINI_API_KEY")
+   API_KEY = os.getenv("IBM_CLOUD_API_KEY")
+   ```
+6. In `tts_helper.py` replace lines 9-19 with the following.
+   ```sh
+   os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "{Enter file path for Google Text-to-Speech API JSON file}"
+   ```
+7. Run the Application:
+   ```sh
+   streamlit run app.py
+   ```
+   The app will be available at `http://localhost:8501`
 
 ## How to Use
 1. Navigate through the sidebar to select a tool.
 2. Input your code or query and click 'Generate'.
 3. View, copy, or download the output.
 4. Use the documentation generator for structured reports.
-
-## .gitignore Configuration
-To avoid committing unnecessary files, create a `.gitignore` file and add:
-```
-# Virtual environment
-venv/
-
-# Logs and cache
-*.log
-cache/
-
-# Python bytecode
-__pycache__/
-*.pyc
-
-# Environment variables
-.env
-```
-This ensures sensitive and temporary files are not uploaded to GitHub.
 
 ## Business Value
 - **Accelerated Development:** AI-driven code generation and refactoring reduce development time.
