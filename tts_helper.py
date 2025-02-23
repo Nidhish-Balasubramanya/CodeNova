@@ -48,7 +48,7 @@ def detect_language(code):
 # Function to get AI-generated explanation
 def get_code_explanation(code, language):
     body = {
-        "input": f"Generate an script for a person to explain the following {language} code. always start with an "Hello!". The code is as Follows {code} ",
+        "input": f"Generate an script for a person to explain the following {language} code. always start with an 'Hello!'. The code is as Follows {code} ",
         "parameters": {"decoding_method": "greedy", "max_new_tokens": 4000},
         "model_id": "ibm/granite-20b-code-instruct",
         "project_id": "33f5277e-ac20-4539-81fd-0ab8217c908f"
