@@ -11,7 +11,7 @@ creds_json = st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
 creds_dict = json.loads(creds_json)
 
 # Save to a temporary file
-temp_path = "/tmp/gcp_credentials.json"
+temp_path = "/tmp/gcp_credentials2.json"
 with open(temp_path, "w") as f:
     json.dump(creds_dict, f)
 
