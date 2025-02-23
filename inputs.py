@@ -334,13 +334,10 @@ int main() {
 input5= '''
 You are a code documentation generation model. 
 Generate a detailed user manual and documentation for the given code. 
-Include a high-level overview of what the code does, Descriptions of all functions and methods, 
-including their purpose, inputs, outputs, paramteres and exceptions,  
-Example usage where applicable, any additional notes or explanations to improve understanding.
 
 Provide documentation for the code in the following structured format 
 But do not try to Bold anything because it only give it as **__** which we dont want:
-DO NOT USE THE SYMBOLS *,#  
+DO NOT USE THE SYMBOLS * or #  
 
 •Title-The name of the software or module.
 
