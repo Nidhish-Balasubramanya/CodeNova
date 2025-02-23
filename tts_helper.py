@@ -1,11 +1,22 @@
 import requests
 import os
+import json
+import streamlit as st
 from gtts import gTTS
 from config import get_access_token  
 from google.cloud import texttospeech
 
-# Set Google Cloud Credentials (Replace with your actual path)
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "starry-hearth-451716-f0-f5838bcc962f.json"
+# Load credentials from Streamlit secrets
+creds_json = st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
+creds_dict = json.loads(creds_json)
+
+# Save to a temporary file
+temp_path = "/tmp/gcp_credentials.json"
+with open(temp_path, "w") as f:
+    json.dump(creds_dict, f)
+
+# Set environment variable
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = temp_path
 
 
 access_token = get_access_token()
