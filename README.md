@@ -4,7 +4,7 @@
 ## Overview
 **CodeNova** is an AI-powered code assistant designed to streamline software development by automating code generation, debugging, documentation, and code explanations. It integrates multiple AI models to provide a seamless and intelligent coding experience.integrating IBM's Granite LLMs to enhance software development workflows. This project was built for the **Generative AI Hackathon with IBM GRANITE** and provides business-valued solutions by automating various software engineering tasks.
 
-To access CodeNova through streamlit click [CodeNova](https://codenova.streamlit.app/)
+To access CodeNova through streamlit click [CodeNova](https://codenova.streamlit.app/) (open in dark mode for better user experience)
 ## Features
 The application includes six main tools:
 1. **Code Wizard** - Automatically generate code based on user input prompt.
