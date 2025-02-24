@@ -4,6 +4,7 @@ import json
 import streamlit as st
 from gtts import gTTS
 from config import get_access_token  
+import google.generativeai as genai
 from google.cloud import texttospeech
 
 # Load credentials from Streamlit secrets
@@ -18,15 +19,6 @@ with open(temp_path, "w") as f:
 # Set environment variable
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = temp_path
 
-
-access_token = get_access_token()
-
-url = "https://us-south.ml.cloud.ibm.com/ml/v1/text/generation?version=2023-05-29"
-headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-    "Authorization": f"Bearer {access_token}"
-}
 
 # Function to detect programming language
 def detect_language(code):
@@ -44,26 +36,22 @@ def detect_language(code):
             return lang.capitalize()
 
     return "Unknown"
+    
 
-# Function to get AI-generated explanation
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+
 def get_code_explanation(code, language):
-    body = {
-        "input": f"Explain the following {language} code in beginner-friendly terms. Go line by line but skip repetitive sections. Use a polite tone and start with 'Hello!' Avoid using special characters that may cause issues with speech synthesis.\n\n{code}",
-        "parameters": {"decoding_method": "greedy", "max_new_tokens": 4000},
-        "model_id": "ibm/granite-20b-code-instruct",
-        "project_id": "33f5277e-ac20-4539-81fd-0ab8217c908f"
-    }
-
+    prompt = (f"Explain the following {language} code in beginner-friendly terms. "
+              "Go line by line but skip repetitive sections. Use a polite tone and start with 'Hello!' "
+              "Avoid using special characters that may cause issues with speech synthesis.\n\n"
+              f"{code}")
     try:
-        response = requests.post(url, headers=headers, json=body)
-        if response.status_code == 200:
-            response_data = response.json()
-            explanation = response_data.get("results", [{}])[0].get("generated_text", "No explanation generated.")
-            return explanation.replace("`", "")
-        else:
-            return f"Error: {response.text}"
-    except requests.exceptions.RequestException as e:
+        model = genai.GenerativeModel("gemini-pro")
+        response = model.generate_content(prompt)
+        return response.text if response else "No explanation generated."
+    except Exception as e:
         return f"Request failed: {str(e)}"
+"
 
 # Function to convert text to speech
 '''
