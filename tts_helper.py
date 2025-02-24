@@ -51,7 +51,6 @@ def get_code_explanation(code, language):
         return response.text if response else "No explanation generated."
     except Exception as e:
         return f"Request failed: {str(e)}"
-"
 
 # Function to convert text to speech
 '''
